@@ -1,0 +1,1 @@
+kubectl exec --stdin --tty pvc-user  -- /bin/bash
