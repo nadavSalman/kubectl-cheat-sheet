@@ -12,13 +12,14 @@ spec:
       app: busybox
   strategy: {}
   template:
+
     metadata:
       creationTimestamp: null
       labels:
         app: busybox
     spec:
-      nodeSelector: 
-       environment: dev
+      nodeSelector:
+        box: "true" 
       containers:
         - command:
             - "/bin/sh"
@@ -26,4 +27,3 @@ spec:
             - "while true; do cat /init-container-msg-mount-path/this; sleep 5; done"
           image: busybox
           name: busybox
-          imagePullPolicy: Never

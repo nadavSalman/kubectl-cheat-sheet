@@ -44,3 +44,25 @@ authservice-55dc97f84c-mv26z                 mz-sworker17.attentigroup.local
 biometricsidentityservice-7d97bf74c8-6cjtb   mz-sworker14.attentigroup.local
 biometricsidentityservice-7d97bf74c8-hj66b   mz-sworker16.attentigroup.local
 biometricsidentityservice-7d97bf74c8-jzqmb   mz-sworker15.attentigroup.local
+
+
+
+
+ k get nodes -o custom-columns=OS:.status.nodeInfo.osImage
+OS
+Ubuntu 20.04.5 LTS
+Ubuntu 20.04.5 LTS
+
+
+
+kubectl get pv -ocustom-columns=NAME:.metadata.name,CAPACITY:.spec.capacity.storage  
+NAME       CAPACITY
+pv-log-1   100Mi
+pv-log-2   200Mi
+pv-log-3   300Mi
+pv-log-4   40Mi
+
+
+
+
+$ k get pods -l product=Attenti -o custom-columns=POD_NAME:.metadata.name,CONTAINER:.spec.containers[*].name
