@@ -350,3 +350,21 @@ Develop a JSON PATH query to get the restart count of redis-container under the 
 Scroll down if you can't see the status section
  
 $.status.containerStatuses[?( @.name == "redis-container")].restartCount
+
+
+
+
+$ for node in $(k get no -o=name) ; do k get  $node  -o=jsonpath='{.spec.taints}' | jq  ; done
+[
+  {
+    "effect": "NoSchedule",
+    "key": "node-role.kubernetes.io/control-plane"
+  }
+]
+[
+  {
+    "effect": "NoSchedule",
+    "key": "key1",
+    "value": "value1"
+  }
+]

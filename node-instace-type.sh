@@ -1,0 +1,1 @@
+kubectl get nodes --output=custom-columns=NODE:.metadata.name,INSTANCE_TYPE:.metadata.labels.'node.kuber
